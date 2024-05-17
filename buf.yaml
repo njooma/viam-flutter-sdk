@@ -1,10 +1,17 @@
-version: v1
-breaking:
-  use:
-    - FILE
+version: v2
+deps:
+  - buf.build/viamrobotics/api
+  - buf.build/viamrobotics/goutils
 lint:
   use:
     - DEFAULT
-deps:
-  - buf.build/viamrobotics/goutils
-  - buf.build/viamrobotics/api
+  except:
+    - FIELD_NOT_REQUIRED
+    - PACKAGE_NO_IMPORT_CYCLE
+  disallow_comment_ignores: true
+breaking:
+  use:
+    - FILE
+  except:
+    - EXTENSION_NO_DELETE
+    - FIELD_SAME_DEFAULT
