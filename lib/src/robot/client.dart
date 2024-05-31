@@ -78,7 +78,10 @@ class RobotClient {
     client._channel = await dial(url, options.dialOptions, () => client._sessionsClient.metadata());
     client._sessionsClient = SessionsClient(client._channel, options.enableSessions);
     client._client = RobotServiceClient(client._channel);
-    client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
+
+    if (client._channel is WebRtcClientChannel) {
+      client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
+    }
     await client.refresh();
     client._startCheckConnectionTask();
     return client;

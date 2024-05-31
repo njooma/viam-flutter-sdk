@@ -17,14 +17,12 @@ jobs:
       - uses: bufbuild/buf-setup-action@v1.25.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: arduino/setup-protoc@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Flutter
         run: flutter pub get
 
-      - run: make setup
+      - name: Update pinned dependency
+        run: |
 
       - name: Generate buf
         run: make buf

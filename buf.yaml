@@ -1,7 +1,4 @@
 version: v2
-deps:
-  - buf.build/viamrobotics/api
-  - buf.build/viamrobotics/goutils
 lint:
   use:
     - DEFAULT
