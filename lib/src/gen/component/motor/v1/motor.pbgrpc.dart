@@ -32,19 +32,13 @@ class MotorServiceClient extends $grpc.Client {
       ($core.List<$core.int> value) => $23.GoForResponse.fromBuffer(value));
   static final _$goTo = $grpc.ClientMethod<$23.GoToRequest, $23.GoToResponse>(
       '/viam.component.motor.v1.MotorService/GoTo',
-<<<<<<< HEAD
-      ($0.GoToRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GoToResponse.fromBuffer(value));
-  static final _$setRPM = $grpc.ClientMethod<$0.SetRPMRequest, $0.SetRPMResponse>(
-      '/viam.component.motor.v1.MotorService/SetRPM',
-      ($0.SetRPMRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.SetRPMResponse.fromBuffer(value));
-  static final _$resetZeroPosition = $grpc.ClientMethod<$0.ResetZeroPositionRequest, $0.ResetZeroPositionResponse>(
-=======
       ($23.GoToRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $23.GoToResponse.fromBuffer(value));
+  static final _$setRPM = $grpc.ClientMethod<$23.SetRPMRequest, $23.SetRPMResponse>(
+      '/viam.component.motor.v1.MotorService/SetRPM',
+      ($23.SetRPMRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $23.SetRPMResponse.fromBuffer(value));
   static final _$resetZeroPosition = $grpc.ClientMethod<$23.ResetZeroPositionRequest, $23.ResetZeroPositionResponse>(
->>>>>>> a6fce597d (Update to remote plugins)
       '/viam.component.motor.v1.MotorService/ResetZeroPosition',
       ($23.ResetZeroPositionRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $23.ResetZeroPositionResponse.fromBuffer(value));
@@ -95,15 +89,11 @@ class MotorServiceClient extends $grpc.Client {
     return $createUnaryCall(_$goTo, request, options: options);
   }
 
-<<<<<<< HEAD
-  $grpc.ResponseFuture<$0.SetRPMResponse> setRPM($0.SetRPMRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$23.SetRPMResponse> setRPM($23.SetRPMRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setRPM, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ResetZeroPositionResponse> resetZeroPosition($0.ResetZeroPositionRequest request, {$grpc.CallOptions? options}) {
-=======
   $grpc.ResponseFuture<$23.ResetZeroPositionResponse> resetZeroPosition($23.ResetZeroPositionRequest request, {$grpc.CallOptions? options}) {
->>>>>>> a6fce597d (Update to remote plugins)
     return $createUnaryCall(_$resetZeroPosition, request, options: options);
   }
 
@@ -160,22 +150,16 @@ abstract class MotorServiceBase extends $grpc.Service {
         goTo_Pre,
         false,
         false,
-<<<<<<< HEAD
-        ($core.List<$core.int> value) => $0.GoToRequest.fromBuffer(value),
-        ($0.GoToResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.SetRPMRequest, $0.SetRPMResponse>(
+        ($core.List<$core.int> value) => $23.GoToRequest.fromBuffer(value),
+        ($23.GoToResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$23.SetRPMRequest, $23.SetRPMResponse>(
         'SetRPM',
         setRPM_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.SetRPMRequest.fromBuffer(value),
-        ($0.SetRPMResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ResetZeroPositionRequest, $0.ResetZeroPositionResponse>(
-=======
-        ($core.List<$core.int> value) => $23.GoToRequest.fromBuffer(value),
-        ($23.GoToResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $23.SetRPMRequest.fromBuffer(value),
+        ($23.SetRPMResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$23.ResetZeroPositionRequest, $23.ResetZeroPositionResponse>(
->>>>>>> a6fce597d (Update to remote plugins)
         'ResetZeroPosition',
         resetZeroPosition_Pre,
         false,
@@ -245,15 +229,11 @@ abstract class MotorServiceBase extends $grpc.Service {
     return goTo(call, await request);
   }
 
-<<<<<<< HEAD
-  $async.Future<$0.SetRPMResponse> setRPM_Pre($grpc.ServiceCall call, $async.Future<$0.SetRPMRequest> request) async {
+  $async.Future<$23.SetRPMResponse> setRPM_Pre($grpc.ServiceCall call, $async.Future<$23.SetRPMRequest> request) async {
     return setRPM(call, await request);
   }
 
-  $async.Future<$0.ResetZeroPositionResponse> resetZeroPosition_Pre($grpc.ServiceCall call, $async.Future<$0.ResetZeroPositionRequest> request) async {
-=======
   $async.Future<$23.ResetZeroPositionResponse> resetZeroPosition_Pre($grpc.ServiceCall call, $async.Future<$23.ResetZeroPositionRequest> request) async {
->>>>>>> a6fce597d (Update to remote plugins)
     return resetZeroPosition(call, await request);
   }
 
@@ -285,23 +265,10 @@ abstract class MotorServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
-<<<<<<< HEAD
-  $async.Future<$0.SetPowerResponse> setPower($grpc.ServiceCall call, $0.SetPowerRequest request);
-  $async.Future<$0.GoForResponse> goFor($grpc.ServiceCall call, $0.GoForRequest request);
-  $async.Future<$0.GoToResponse> goTo($grpc.ServiceCall call, $0.GoToRequest request);
-  $async.Future<$0.SetRPMResponse> setRPM($grpc.ServiceCall call, $0.SetRPMRequest request);
-  $async.Future<$0.ResetZeroPositionResponse> resetZeroPosition($grpc.ServiceCall call, $0.ResetZeroPositionRequest request);
-  $async.Future<$0.GetPositionResponse> getPosition($grpc.ServiceCall call, $0.GetPositionRequest request);
-  $async.Future<$0.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $0.GetPropertiesRequest request);
-  $async.Future<$0.StopResponse> stop($grpc.ServiceCall call, $0.StopRequest request);
-  $async.Future<$0.IsPoweredResponse> isPowered($grpc.ServiceCall call, $0.IsPoweredRequest request);
-  $async.Future<$0.IsMovingResponse> isMoving($grpc.ServiceCall call, $0.IsMovingRequest request);
-  $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
-  $async.Future<$1.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $1.GetGeometriesRequest request);
-=======
   $async.Future<$23.SetPowerResponse> setPower($grpc.ServiceCall call, $23.SetPowerRequest request);
   $async.Future<$23.GoForResponse> goFor($grpc.ServiceCall call, $23.GoForRequest request);
   $async.Future<$23.GoToResponse> goTo($grpc.ServiceCall call, $23.GoToRequest request);
+  $async.Future<$23.SetRPMResponse> setRPM($grpc.ServiceCall call, $23.SetRPMRequest request);
   $async.Future<$23.ResetZeroPositionResponse> resetZeroPosition($grpc.ServiceCall call, $23.ResetZeroPositionRequest request);
   $async.Future<$23.GetPositionResponse> getPosition($grpc.ServiceCall call, $23.GetPositionRequest request);
   $async.Future<$23.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $23.GetPropertiesRequest request);
@@ -310,5 +277,4 @@ abstract class MotorServiceBase extends $grpc.Service {
   $async.Future<$23.IsMovingResponse> isMoving($grpc.ServiceCall call, $23.IsMovingRequest request);
   $async.Future<$13.DoCommandResponse> doCommand($grpc.ServiceCall call, $13.DoCommandRequest request);
   $async.Future<$13.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $13.GetGeometriesRequest request);
->>>>>>> a6fce597d (Update to remote plugins)
 }

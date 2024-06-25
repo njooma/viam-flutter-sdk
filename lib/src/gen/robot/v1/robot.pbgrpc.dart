@@ -91,17 +91,12 @@ class RobotServiceClient extends $grpc.Client {
       ($core.List<$core.int> value) => $29.GetCloudMetadataResponse.fromBuffer(value));
   static final _$restartModule = $grpc.ClientMethod<$29.RestartModuleRequest, $29.RestartModuleResponse>(
       '/viam.robot.v1.RobotService/RestartModule',
-<<<<<<< HEAD
-      ($0.RestartModuleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.RestartModuleResponse.fromBuffer(value));
-  static final _$shutdown = $grpc.ClientMethod<$0.ShutdownRequest, $0.ShutdownResponse>(
-      '/viam.robot.v1.RobotService/Shutdown',
-      ($0.ShutdownRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.ShutdownResponse.fromBuffer(value));
-=======
       ($29.RestartModuleRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $29.RestartModuleResponse.fromBuffer(value));
->>>>>>> a6fce597d (Update to remote plugins)
+  static final _$shutdown = $grpc.ClientMethod<$29.ShutdownRequest, $29.ShutdownResponse>(
+      '/viam.robot.v1.RobotService/Shutdown',
+      ($29.ShutdownRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $29.ShutdownResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -181,7 +176,7 @@ class RobotServiceClient extends $grpc.Client {
     return $createUnaryCall(_$restartModule, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ShutdownResponse> shutdown($0.ShutdownRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$29.ShutdownResponse> shutdown($29.ShutdownRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$shutdown, request, options: options);
   }
 }
@@ -315,20 +310,15 @@ abstract class RobotServiceBase extends $grpc.Service {
         restartModule_Pre,
         false,
         false,
-<<<<<<< HEAD
-        ($core.List<$core.int> value) => $0.RestartModuleRequest.fromBuffer(value),
-        ($0.RestartModuleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ShutdownRequest, $0.ShutdownResponse>(
+        ($core.List<$core.int> value) => $29.RestartModuleRequest.fromBuffer(value),
+        ($29.RestartModuleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$29.ShutdownRequest, $29.ShutdownResponse>(
         'Shutdown',
         shutdown_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ShutdownRequest.fromBuffer(value),
-        ($0.ShutdownResponse value) => value.writeToBuffer()));
-=======
-        ($core.List<$core.int> value) => $29.RestartModuleRequest.fromBuffer(value),
-        ($29.RestartModuleResponse value) => value.writeToBuffer()));
->>>>>>> a6fce597d (Update to remote plugins)
+        ($core.List<$core.int> value) => $29.ShutdownRequest.fromBuffer(value),
+        ($29.ShutdownResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$29.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$29.GetOperationsRequest> request) async {
@@ -403,31 +393,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return restartModule(call, await request);
   }
 
-<<<<<<< HEAD
-  $async.Future<$0.ShutdownResponse> shutdown_Pre($grpc.ServiceCall call, $async.Future<$0.ShutdownRequest> request) async {
+  $async.Future<$29.ShutdownResponse> shutdown_Pre($grpc.ServiceCall call, $async.Future<$29.ShutdownRequest> request) async {
     return shutdown(call, await request);
   }
 
-  $async.Future<$0.GetOperationsResponse> getOperations($grpc.ServiceCall call, $0.GetOperationsRequest request);
-  $async.Future<$0.GetSessionsResponse> getSessions($grpc.ServiceCall call, $0.GetSessionsRequest request);
-  $async.Future<$0.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $0.ResourceNamesRequest request);
-  $async.Future<$0.ResourceRPCSubtypesResponse> resourceRPCSubtypes($grpc.ServiceCall call, $0.ResourceRPCSubtypesRequest request);
-  $async.Future<$0.CancelOperationResponse> cancelOperation($grpc.ServiceCall call, $0.CancelOperationRequest request);
-  $async.Future<$0.BlockForOperationResponse> blockForOperation($grpc.ServiceCall call, $0.BlockForOperationRequest request);
-  $async.Future<$0.DiscoverComponentsResponse> discoverComponents($grpc.ServiceCall call, $0.DiscoverComponentsRequest request);
-  $async.Future<$0.FrameSystemConfigResponse> frameSystemConfig($grpc.ServiceCall call, $0.FrameSystemConfigRequest request);
-  $async.Future<$0.TransformPoseResponse> transformPose($grpc.ServiceCall call, $0.TransformPoseRequest request);
-  $async.Future<$0.TransformPCDResponse> transformPCD($grpc.ServiceCall call, $0.TransformPCDRequest request);
-  $async.Future<$0.GetStatusResponse> getStatus($grpc.ServiceCall call, $0.GetStatusRequest request);
-  $async.Stream<$0.StreamStatusResponse> streamStatus($grpc.ServiceCall call, $0.StreamStatusRequest request);
-  $async.Future<$0.StopAllResponse> stopAll($grpc.ServiceCall call, $0.StopAllRequest request);
-  $async.Future<$0.StartSessionResponse> startSession($grpc.ServiceCall call, $0.StartSessionRequest request);
-  $async.Future<$0.SendSessionHeartbeatResponse> sendSessionHeartbeat($grpc.ServiceCall call, $0.SendSessionHeartbeatRequest request);
-  $async.Future<$0.LogResponse> log($grpc.ServiceCall call, $0.LogRequest request);
-  $async.Future<$0.GetCloudMetadataResponse> getCloudMetadata($grpc.ServiceCall call, $0.GetCloudMetadataRequest request);
-  $async.Future<$0.RestartModuleResponse> restartModule($grpc.ServiceCall call, $0.RestartModuleRequest request);
-  $async.Future<$0.ShutdownResponse> shutdown($grpc.ServiceCall call, $0.ShutdownRequest request);
-=======
   $async.Future<$29.GetOperationsResponse> getOperations($grpc.ServiceCall call, $29.GetOperationsRequest request);
   $async.Future<$29.GetSessionsResponse> getSessions($grpc.ServiceCall call, $29.GetSessionsRequest request);
   $async.Future<$29.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $29.ResourceNamesRequest request);
@@ -446,5 +415,5 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$29.LogResponse> log($grpc.ServiceCall call, $29.LogRequest request);
   $async.Future<$29.GetCloudMetadataResponse> getCloudMetadata($grpc.ServiceCall call, $29.GetCloudMetadataRequest request);
   $async.Future<$29.RestartModuleResponse> restartModule($grpc.ServiceCall call, $29.RestartModuleRequest request);
->>>>>>> a6fce597d (Update to remote plugins)
+  $async.Future<$29.ShutdownResponse> shutdown($grpc.ServiceCall call, $29.ShutdownRequest request);
 }

@@ -10,7 +10,7 @@ endif
 buf: buf.yaml buf.gen.yaml
 	rm -rf lib/src/gen
 	buf generate buf.build/viamrobotics/goutils
-	buf generate buf.build/viamrobotics/api:v0.1.302
+	buf generate buf.build/viamrobotics/api:v0.1.317
 	buf generate buf.build/googleapis/googleapis
 	buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/any.proto
 	buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/duration.proto

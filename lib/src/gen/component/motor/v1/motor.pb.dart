@@ -394,7 +394,7 @@ class SetRPMRequest extends $pb.GeneratedMessage {
   factory SetRPMRequest({
     $core.String? name,
     $core.double? rpm,
-    $2.Struct? extra,
+    $42.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -415,7 +415,7 @@ class SetRPMRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetRPMRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.motor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..a<$core.double>(2, _omitFieldNames ? '' : 'rpm', $pb.PbFieldType.OD)
-    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..aOM<$42.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $42.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -462,15 +462,15 @@ class SetRPMRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(2);
+  $42.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($2.Struct v) { setField(99, v); }
+  set extra($42.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(2);
+  $42.Struct ensureExtra() => $_ensure(2);
 }
 
 class SetRPMResponse extends $pb.GeneratedMessage {

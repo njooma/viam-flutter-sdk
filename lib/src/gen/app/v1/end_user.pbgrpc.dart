@@ -35,17 +35,12 @@ class EndUserServiceClient extends $grpc.Client {
       ($core.List<$core.int> value) => $10.RegisterAuthApplicationResponse.fromBuffer(value));
   static final _$updateAuthApplication = $grpc.ClientMethod<$10.UpdateAuthApplicationRequest, $10.UpdateAuthApplicationResponse>(
       '/viam.app.v1.EndUserService/UpdateAuthApplication',
-<<<<<<< HEAD
-      ($4.UpdateAuthApplicationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.UpdateAuthApplicationResponse.fromBuffer(value));
-  static final _$getAuthApplication = $grpc.ClientMethod<$4.GetAuthApplicationRequest, $4.GetAuthApplicationResponse>(
-      '/viam.app.v1.EndUserService/GetAuthApplication',
-      ($4.GetAuthApplicationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.GetAuthApplicationResponse.fromBuffer(value));
-=======
       ($10.UpdateAuthApplicationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $10.UpdateAuthApplicationResponse.fromBuffer(value));
->>>>>>> a6fce597d (Update to remote plugins)
+  static final _$getAuthApplication = $grpc.ClientMethod<$10.GetAuthApplicationRequest, $10.GetAuthApplicationResponse>(
+      '/viam.app.v1.EndUserService/GetAuthApplication',
+      ($10.GetAuthApplicationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.GetAuthApplicationResponse.fromBuffer(value));
 
   EndUserServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -69,7 +64,7 @@ class EndUserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateAuthApplication, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.GetAuthApplicationResponse> getAuthApplication($4.GetAuthApplicationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$10.GetAuthApplicationResponse> getAuthApplication($10.GetAuthApplicationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAuthApplication, request, options: options);
   }
 }
@@ -105,20 +100,15 @@ abstract class EndUserServiceBase extends $grpc.Service {
         updateAuthApplication_Pre,
         false,
         false,
-<<<<<<< HEAD
-        ($core.List<$core.int> value) => $4.UpdateAuthApplicationRequest.fromBuffer(value),
-        ($4.UpdateAuthApplicationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.GetAuthApplicationRequest, $4.GetAuthApplicationResponse>(
+        ($core.List<$core.int> value) => $10.UpdateAuthApplicationRequest.fromBuffer(value),
+        ($10.UpdateAuthApplicationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.GetAuthApplicationRequest, $10.GetAuthApplicationResponse>(
         'GetAuthApplication',
         getAuthApplication_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.GetAuthApplicationRequest.fromBuffer(value),
-        ($4.GetAuthApplicationResponse value) => value.writeToBuffer()));
-=======
-        ($core.List<$core.int> value) => $10.UpdateAuthApplicationRequest.fromBuffer(value),
-        ($10.UpdateAuthApplicationResponse value) => value.writeToBuffer()));
->>>>>>> a6fce597d (Update to remote plugins)
+        ($core.List<$core.int> value) => $10.GetAuthApplicationRequest.fromBuffer(value),
+        ($10.GetAuthApplicationResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$10.IsLegalAcceptedResponse> isLegalAccepted_Pre($grpc.ServiceCall call, $async.Future<$10.IsLegalAcceptedRequest> request) async {
@@ -137,20 +127,13 @@ abstract class EndUserServiceBase extends $grpc.Service {
     return updateAuthApplication(call, await request);
   }
 
-<<<<<<< HEAD
-  $async.Future<$4.GetAuthApplicationResponse> getAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$4.GetAuthApplicationRequest> request) async {
+  $async.Future<$10.GetAuthApplicationResponse> getAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$10.GetAuthApplicationRequest> request) async {
     return getAuthApplication(call, await request);
   }
 
-  $async.Future<$4.IsLegalAcceptedResponse> isLegalAccepted($grpc.ServiceCall call, $4.IsLegalAcceptedRequest request);
-  $async.Future<$4.AcceptLegalResponse> acceptLegal($grpc.ServiceCall call, $4.AcceptLegalRequest request);
-  $async.Future<$4.RegisterAuthApplicationResponse> registerAuthApplication($grpc.ServiceCall call, $4.RegisterAuthApplicationRequest request);
-  $async.Future<$4.UpdateAuthApplicationResponse> updateAuthApplication($grpc.ServiceCall call, $4.UpdateAuthApplicationRequest request);
-  $async.Future<$4.GetAuthApplicationResponse> getAuthApplication($grpc.ServiceCall call, $4.GetAuthApplicationRequest request);
-=======
   $async.Future<$10.IsLegalAcceptedResponse> isLegalAccepted($grpc.ServiceCall call, $10.IsLegalAcceptedRequest request);
   $async.Future<$10.AcceptLegalResponse> acceptLegal($grpc.ServiceCall call, $10.AcceptLegalRequest request);
   $async.Future<$10.RegisterAuthApplicationResponse> registerAuthApplication($grpc.ServiceCall call, $10.RegisterAuthApplicationRequest request);
   $async.Future<$10.UpdateAuthApplicationResponse> updateAuthApplication($grpc.ServiceCall call, $10.UpdateAuthApplicationRequest request);
->>>>>>> a6fce597d (Update to remote plugins)
+  $async.Future<$10.GetAuthApplicationResponse> getAuthApplication($grpc.ServiceCall call, $10.GetAuthApplicationRequest request);
 }

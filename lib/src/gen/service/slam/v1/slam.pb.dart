@@ -13,12 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-<<<<<<< HEAD
-import '../../../common/v1/common.pb.dart' as $1;
-=======
 import '../../../common/v1/common.pb.dart' as $13;
-import '../../../google/protobuf/struct.pb.dart' as $42;
->>>>>>> a6fce597d (Update to remote plugins)
 import 'slam.pbenum.dart';
 
 export 'slam.pbenum.dart';
@@ -76,13 +71,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 
 class GetPositionResponse extends $pb.GeneratedMessage {
   factory GetPositionResponse({
-<<<<<<< HEAD
-    $1.Pose? pose,
-=======
     $13.Pose? pose,
-    $core.String? componentReference,
-    $42.Struct? extra,
->>>>>>> a6fce597d (Update to remote plugins)
   }) {
     final $result = create();
     if (pose != null) {
@@ -95,13 +84,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
-<<<<<<< HEAD
-    ..aOM<$1.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $1.Pose.create)
-=======
     ..aOM<$13.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $13.Pose.create)
-    ..aOS(2, _omitFieldNames ? '' : 'componentReference')
-    ..aOM<$42.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $42.Struct.create)
->>>>>>> a6fce597d (Update to remote plugins)
     ..hasRequiredFields = false
   ;
 
@@ -136,33 +119,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-<<<<<<< HEAD
-  $1.Pose ensurePose() => $_ensure(0);
-=======
   $13.Pose ensurePose() => $_ensure(0);
-
-  /// This is usually the name of the camera that is in the SLAM config
-  @$pb.TagNumber(2)
-  $core.String get componentReference => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set componentReference($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasComponentReference() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearComponentReference() => clearField(2);
-
-  /// Additional information in the response
-  @$pb.TagNumber(99)
-  $42.Struct get extra => $_getN(2);
-  @$pb.TagNumber(99)
-  set extra($42.Struct v) { setField(99, v); }
-  @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(2);
-  @$pb.TagNumber(99)
-  void clearExtra() => clearField(99);
-  @$pb.TagNumber(99)
-  $42.Struct ensureExtra() => $_ensure(2);
->>>>>>> a6fce597d (Update to remote plugins)
 }
 
 class GetPointCloudMapRequest extends $pb.GeneratedMessage {

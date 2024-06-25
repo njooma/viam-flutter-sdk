@@ -377,6 +377,7 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
     $core.String? robot,
     $43.Timestamp? when,
     RobotPart? old,
+    AuthenticatorInfo? editedBy,
   }) {
     final $result = create();
     if (part != null) {
@@ -391,6 +392,9 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
     if (old != null) {
       $result.old = old;
     }
+    if (editedBy != null) {
+      $result.editedBy = editedBy;
+    }
     return $result;
   }
   RobotPartHistoryEntry._() : super();
@@ -402,6 +406,7 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'robot')
     ..aOM<$43.Timestamp>(3, _omitFieldNames ? '' : 'when', subBuilder: $43.Timestamp.create)
     ..aOM<RobotPart>(4, _omitFieldNames ? '' : 'old', subBuilder: RobotPart.create)
+    ..aOM<AuthenticatorInfo>(5, _omitFieldNames ? '' : 'editedBy', subBuilder: AuthenticatorInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -465,6 +470,95 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
   void clearOld() => clearField(4);
   @$pb.TagNumber(4)
   RobotPart ensureOld() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  AuthenticatorInfo get editedBy => $_getN(4);
+  @$pb.TagNumber(5)
+  set editedBy(AuthenticatorInfo v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEditedBy() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEditedBy() => clearField(5);
+  @$pb.TagNumber(5)
+  AuthenticatorInfo ensureEditedBy() => $_ensure(4);
+}
+
+class AuthenticatorInfo extends $pb.GeneratedMessage {
+  factory AuthenticatorInfo({
+    AuthenticationType? type,
+    $core.String? value,
+    $core.bool? isDeactivated,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    if (isDeactivated != null) {
+      $result.isDeactivated = isDeactivated;
+    }
+    return $result;
+  }
+  AuthenticatorInfo._() : super();
+  factory AuthenticatorInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AuthenticatorInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthenticatorInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..e<AuthenticationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AuthenticationType.AUTHENTICATION_TYPE_UNSPECIFIED, valueOf: AuthenticationType.valueOf, enumValues: AuthenticationType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..aOB(3, _omitFieldNames ? '' : 'isDeactivated')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AuthenticatorInfo clone() => AuthenticatorInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AuthenticatorInfo copyWith(void Function(AuthenticatorInfo) updates) => super.copyWith((message) => updates(message as AuthenticatorInfo)) as AuthenticatorInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AuthenticatorInfo create() => AuthenticatorInfo._();
+  AuthenticatorInfo createEmptyInstance() => create();
+  static $pb.PbList<AuthenticatorInfo> createRepeated() => $pb.PbList<AuthenticatorInfo>();
+  @$core.pragma('dart2js:noInline')
+  static AuthenticatorInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthenticatorInfo>(create);
+  static AuthenticatorInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AuthenticationType get type => $_getN(0);
+  @$pb.TagNumber(1)
+  set type(AuthenticationType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get isDeactivated => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isDeactivated($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIsDeactivated() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsDeactivated() => clearField(3);
 }
 
 class ListOrganizationsRequest extends $pb.GeneratedMessage {
@@ -7554,8 +7648,8 @@ class ModuleMetadata extends $pb.GeneratedMessage {
 class MLModelMetadata extends $pb.GeneratedMessage {
   factory MLModelMetadata({
     $core.Iterable<$core.String>? versions,
-    $0.ModelType? modelType,
-    $0.ModelFramework? modelFramework,
+    $6.ModelType? modelType,
+    $6.ModelFramework? modelFramework,
   }) {
     final $result = create();
     if (versions != null) {
@@ -7575,8 +7669,8 @@ class MLModelMetadata extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLModelMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'versions')
-    ..e<$0.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $0.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $0.ModelType.valueOf, enumValues: $0.ModelType.values)
-    ..e<$0.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $0.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $0.ModelFramework.valueOf, enumValues: $0.ModelFramework.values)
+    ..e<$6.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $6.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $6.ModelType.valueOf, enumValues: $6.ModelType.values)
+    ..e<$6.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $6.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $6.ModelFramework.valueOf, enumValues: $6.ModelFramework.values)
     ..hasRequiredFields = false
   ;
 
@@ -7606,18 +7700,18 @@ class MLModelMetadata extends $pb.GeneratedMessage {
   $core.List<$core.String> get versions => $_getList(0);
 
   @$pb.TagNumber(2)
-  $0.ModelType get modelType => $_getN(1);
+  $6.ModelType get modelType => $_getN(1);
   @$pb.TagNumber(2)
-  set modelType($0.ModelType v) { setField(2, v); }
+  set modelType($6.ModelType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelType() => $_has(1);
   @$pb.TagNumber(2)
   void clearModelType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $0.ModelFramework get modelFramework => $_getN(2);
+  $6.ModelFramework get modelFramework => $_getN(2);
   @$pb.TagNumber(3)
-  set modelFramework($0.ModelFramework v) { setField(3, v); }
+  set modelFramework($6.ModelFramework v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasModelFramework() => $_has(2);
   @$pb.TagNumber(3)
@@ -7627,7 +7721,7 @@ class MLModelMetadata extends $pb.GeneratedMessage {
 class MLTrainingVersion extends $pb.GeneratedMessage {
   factory MLTrainingVersion({
     $core.String? version,
-    $6.Timestamp? createdOn,
+    $43.Timestamp? createdOn,
   }) {
     final $result = create();
     if (version != null) {
@@ -7644,7 +7738,7 @@ class MLTrainingVersion extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLTrainingVersion', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'version')
-    ..aOM<$6.Timestamp>(2, _omitFieldNames ? '' : 'createdOn', subBuilder: $6.Timestamp.create)
+    ..aOM<$43.Timestamp>(2, _omitFieldNames ? '' : 'createdOn', subBuilder: $43.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -7679,27 +7773,21 @@ class MLTrainingVersion extends $pb.GeneratedMessage {
   void clearVersion() => clearField(1);
 
   @$pb.TagNumber(2)
-  $6.Timestamp get createdOn => $_getN(1);
+  $43.Timestamp get createdOn => $_getN(1);
   @$pb.TagNumber(2)
-  set createdOn($6.Timestamp v) { setField(2, v); }
+  set createdOn($43.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreatedOn() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreatedOn() => clearField(2);
   @$pb.TagNumber(2)
-  $6.Timestamp ensureCreatedOn() => $_ensure(1);
+  $43.Timestamp ensureCreatedOn() => $_ensure(1);
 }
 
 class MLTrainingMetadata extends $pb.GeneratedMessage {
   factory MLTrainingMetadata({
-<<<<<<< HEAD
-    $0.ModelType? modelType,
-    $0.ModelFramework? modelFramework,
-=======
-    $core.Iterable<$core.String>? versions,
     $6.ModelType? modelType,
     $6.ModelFramework? modelFramework,
->>>>>>> a6fce597d (Update to remote plugins)
     $core.bool? draft,
     $core.Iterable<MLTrainingVersion>? versions,
   }) {
@@ -7723,14 +7811,8 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   factory MLTrainingMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLTrainingMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-<<<<<<< HEAD
-    ..e<$0.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $0.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $0.ModelType.valueOf, enumValues: $0.ModelType.values)
-    ..e<$0.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $0.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $0.ModelFramework.valueOf, enumValues: $0.ModelFramework.values)
-=======
-    ..pPS(1, _omitFieldNames ? '' : 'versions')
     ..e<$6.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $6.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $6.ModelType.valueOf, enumValues: $6.ModelType.values)
     ..e<$6.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $6.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $6.ModelFramework.valueOf, enumValues: $6.ModelFramework.values)
->>>>>>> a6fce597d (Update to remote plugins)
     ..aOB(4, _omitFieldNames ? '' : 'draft')
     ..pc<MLTrainingVersion>(5, _omitFieldNames ? '' : 'versions', $pb.PbFieldType.PM, subBuilder: MLTrainingVersion.create)
     ..hasRequiredFields = false
@@ -7758,11 +7840,7 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   static MLTrainingMetadata? _defaultInstance;
 
   @$pb.TagNumber(2)
-<<<<<<< HEAD
-  $0.ModelType get modelType => $_getN(0);
-=======
-  $6.ModelType get modelType => $_getN(1);
->>>>>>> a6fce597d (Update to remote plugins)
+  $6.ModelType get modelType => $_getN(0);
   @$pb.TagNumber(2)
   set modelType($6.ModelType v) { setField(2, v); }
   @$pb.TagNumber(2)
@@ -7771,11 +7849,7 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   void clearModelType() => clearField(2);
 
   @$pb.TagNumber(3)
-<<<<<<< HEAD
-  $0.ModelFramework get modelFramework => $_getN(1);
-=======
-  $6.ModelFramework get modelFramework => $_getN(2);
->>>>>>> a6fce597d (Update to remote plugins)
+  $6.ModelFramework get modelFramework => $_getN(1);
   @$pb.TagNumber(3)
   set modelFramework($6.ModelFramework v) { setField(3, v); }
   @$pb.TagNumber(3)
